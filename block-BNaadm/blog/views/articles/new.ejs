@@ -1,0 +1,18 @@
+<%- include('../layout') %>
+
+<h2>Create New Article</h2>
+<form action="/articles" method="POST">
+    <label>Title</label>
+    <input type="text" name="title" required>
+    
+    <label>Description</label>
+    <textarea name="description" required></textarea>
+    
+    <label>Tags</label>
+    <input type="text" name="tags" required>
+    
+    <label>Author</label>
+    <input type="text" name="author" required>
+    
+    <button type="submit">Create</button>
+</form>
