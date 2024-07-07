@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= article.title %></title>
+</head>
+<body>
+    <h1><%= article.title %></h1>
+    <p><%= article.description %></p>
+    <p>Tags: <%= article.tags.join(', ') %></p>
+    <p>Author: <%= article.author %></p>
+    <p>Likes: <%= article.likes %></p>
+    <form action="/articles/<%= article._id %>?_method=PUT" method="POST">
+        <button type="submit" formaction="/articles/<%= article._id %>/like?_method=PUT">Like</button>
+        <button type="submit" formaction="/articles/<%= article._id %>/dislike?_method=PUT">Dislike</button>
+    </form>
+    <a href="/articles/<%= article._id %>/edit">Edit</a>
+    <form action="/articles/<%= article._id %>?_method=DELETE" method="POST" style="display:inline;">
+        <button type="submit">Delete</button>
+    </form>
+    <a href="/articles">Back to Articles</a>
+</body>
+</html>
