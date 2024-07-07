@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Comment</title>
+</head>
+<body>
+    <h1>Edit Comment</h1>
+    <form action="/comments/<%= comment._id %>?_method=PUT" method="POST">
+        <label>Content</label>
+        <textarea name="content" required><%= comment.content %></textarea>
+        <label>Author</label>
+        <input type="text" name="author" value="<%= comment.author %>" required>
+        <button type="submit">Update</button>
+    </form>
+    <a href="/articles/<%= comment.articleId %>">Back to Article</a>
+</body>
+</html>

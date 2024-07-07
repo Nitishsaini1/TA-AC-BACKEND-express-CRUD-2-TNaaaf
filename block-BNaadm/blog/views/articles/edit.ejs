@@ -1,0 +1,19 @@
+<%- include('../layout') %>
+
+<h2>Edit Article</h2>
+<form action="/articles/<%= article._id %>?_method=PUT" method="POST">
+    <label>Title</label>
+    <input type="text" name="title" value="<%= article.title %>" required>
+    
+    <label>Description</label>
+    <textarea name="description" required><%= article.description %></textarea>
+    
+    <label>Tags</label>
+    <input type="text" name="tags" value="<%= article.tags.join(', ') %>" required>
+    
+    <label>Author</label>
+    <input type="text" name="author" value="<%= article.author %>" required>
+    
+    <button type="submit">Update</button>
+</form>
+<a href="/articles/<%= article._id %>">Back to Article</a>
